@@ -1,0 +1,7 @@
+print("Este prgrama va a modificar un texto introducido anterior al comienzo de los sucesos.")
+texto = input("Introduzca a continuación el texto a modificar: ")
+print("El texto introducido sin modificar es:", texto)
+print ("El texto con todas los carácteres en mayúscula queda así:", texto.upper())
+print("El texto con todas minúsculas queda así:", texto.lower())
+print("El texto sin espacios al principio y al final del texto queda así:", texto.strip())
+print("El texto con una letra intercambiada, por ejemplo la A por la E, queda así:", texto.replace("a", "e").replace("á", "e"))

@@ -1,0 +1,6 @@
+a = int(input("Introduzca a continuación un valor para que se convierta en tipo entero: "))
+b = float(input("Introduzca a continuación un valor para que se convierta en tipo float: "))
+c = str(input("Introduzca a continuación un valor para que se convierta en tipo string: "))
+print(type(a))
+print(type(b))
+print(type(c))
