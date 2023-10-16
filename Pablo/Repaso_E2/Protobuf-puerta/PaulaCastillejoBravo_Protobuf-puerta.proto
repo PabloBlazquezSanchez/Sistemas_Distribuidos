@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message Switchboard {
+    int32 id = 1;
+
+    enum OptionType {
+       OPEN  = 0;
+       CLOSE = 1;
+       STATE = 2;
+    }
+
+    enum OpenType {
+        PERSON = 0;
+        VEHICLE = 1;
+    }
+
+    OptionType option = 2;
+    OpenType openDoor = 3; //only for OPEN
+    int32 openTime = 4; //only for OPEN: time in minutes
+    string obstacle = 5; //random obstacle
+    string motor = 6; //random damaged
+}
+
+message Response {
+    int32 id = 1;
+
+    enum Result {
+        OK = 0;
+        DOOR_JUST_OPEN  = 1; //Used to indicate the state OPEN with STATUS
+        DOOR_JUST_CLOSE = 2; //Used to indicate the state CLOSE with STATUS
+        OBSTACLE = 3;
+        NO_MOTOR = 4;
+    }
+
+    Result result = 2;
+}
