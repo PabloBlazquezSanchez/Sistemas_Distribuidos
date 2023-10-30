@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package restaurante;
+
+service ServicioReserva {
+    rpc MakeReserva();
+}().
+
+message Reserva {
+    string nombre = 1;
+    int32 numComensales = 2;
+}
