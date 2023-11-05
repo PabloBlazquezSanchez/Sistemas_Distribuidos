@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+// Espacio de nombres generado
+package restaurant;
+
+service Restaurant {
+    // Dentro del servicio restaurante, incluyo las operaciones que debe realizar
+    rpc request (ReservationRequest) returns (ServerResponse) {}
+    rpc check (ReservationID) returns (ServerResponse) {}
+    rpc cancel (ReservationID) returns (ServerResponse) {}
+    rpc list (ListReq) returns (ServerResponse) {}
+  }
+
+  message ReservationRequest {
+    // IDENTIFICADOR DE LA RESERVA?
+    Reservation reserva = 1;
+  }
+  
+  message ReservationID {
+    int32 reserve_id = 1;
+  }
+
+  message ServerResponse {
+
+    enum Response {
+      ACK = 0;
+      ERR = 1;
+    }
+
+    ReservationID res_id = 1; // LO DEVUELVO PARA CREAR. EN LO DEMÁS VACÍO
+    Response response = 2; // respuesta enum (resp servidor)
+    Reservation my_reserva = 3; // LO DEVUELVO EN CHECK. 
+    string description = 4; // Reason of the denial
+    repeated Reservation reserve_list = 5; // ESTO ES UN CAMPO VACÍO EXCEPTO EN LIST
+    
+  }
+  
+  message ListReq {}
+
+  //E.DA
+  message Reservation {
+    // indicating date, time, number of diners, client's name, and contact phone number.
+    ReservationID res_id = 1;
+    string date = 2;
+    string time = 3;
+    int32 diners = 4;
+    string client_name = 5;
+    string contact_phone_number = 6;
+  }
