@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+// Mensaje de solicitud del cliente
+message MathRequest {
+    // Enumeración para definir el tipo de operación
+    enum OperationType {
+        ADD = 0;        // Suma
+        MULTIPLY = 1;   // Multiplicación
+    }
+
+    OperationType operation = 1;     // Tipo de operación a realizar
+    repeated int32 numbers = 2;  // Lista de números enteros
+};
+
+// Mensaje de respuesta del servidor
+message MathResponse {
+    int64 result = 1;           // Resultado de la operación
+    // bool success = 2;           // Indica si la operación fue exitosa
+    // string error_message = 3;   // Mensaje de error opcional
+}
