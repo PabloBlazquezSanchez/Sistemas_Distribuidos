@@ -1,2 +1,6 @@
 Teoria/**/Entregable/
 venv/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
