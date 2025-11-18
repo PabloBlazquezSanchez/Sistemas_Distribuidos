@@ -17,7 +17,7 @@ run-publisher:
 	$(PY) publisher.py
 
 run-subscriber:
-	$(PY) subscriber.py -d "CD Projekt" Ubisoft -t RPG
+	$(PY) subscriber.py -d ubisoft rockstar
 
 clean:
 	rm -f $(GEN_PY)
